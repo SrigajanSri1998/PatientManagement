@@ -1,4 +1,4 @@
-
+<%@ page import="com.PAF.Patient"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <% if (request.getParameter("patientName") != null)  
@@ -7,7 +7,11 @@
 	session.setAttribute("age", request.getParameter("age"));  
 	session.setAttribute("address", request.getParameter("address"));  
 	session.setAttribute("phoneno", request.getParameter("phoneno"));  
-	session.setAttribute("gender", request.getParameter("gender"));  
+	session.setAttribute("gender", request.getParameter("gender")); 
+	
+	Patient patientObj = new Patient();
+	patientObj.connect();
+	
 	} 
 %> 
 <!DOCTYPE html>
