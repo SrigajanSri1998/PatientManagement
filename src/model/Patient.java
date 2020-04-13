@@ -89,7 +89,7 @@ public class Patient {
 				 String phoneno = rs.getString("phoneNo");     
 				 String age = Integer.toString(rs.getInt("age"));     
 				 String gender = rs.getString("gender"); 
-				 String address = rs.getString("address");
+				 String address = rs.getString("patientAddress");
 			 
 	 
 				 // Add into the html table     

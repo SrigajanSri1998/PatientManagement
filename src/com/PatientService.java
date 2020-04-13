@@ -15,15 +15,15 @@ import org.jsoup.*;
 import org.jsoup.parser.*; 
 import org.jsoup.nodes.Document; 
 
-@Path("/Items") 
+@Path("/Patient") 
 public class PatientService {
 	Patient patientObj = new Patient(); 
 	 
 	 @GET  
 	 @Path("/")  
 	 @Produces(MediaType.TEXT_HTML)  
-	 public String readItems()  {   
-		 return "Hello";  
+	 public String readPatient()  {   
+		 return patientObj.readPatient();
 	}
 	
 }
