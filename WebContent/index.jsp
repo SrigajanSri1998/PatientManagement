@@ -11,8 +11,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div class="container">
-<div class="btn btn-danger">kajan</div>
+<div class="container p-5">
+<div>
+<a href="/PatientManagement/patient"><img src="img/patient.png" class="rounded float-left m-5" alt="Patient" width="20%"></a>
+<a href=""><img src="img/user.png" class="rounded float-left m-5" alt="User" width="20%"></a>
+<a href=""><img src="img/doctor.png" class="rounded float-left m-5" alt="Doctor" width="18%"></a><br>
+<a href=""><img src="img/ambulance.png" class="rounded float-left m-5" alt="ambulance" width="20%"></a>
+<a href=""><img src="img/hospital.png" class="rounded float-left m-5" alt="hospital" width="20%"></a>
+<a href=""><img src="img/payment.png" class="rounded float-left m-5" alt="Doctor" width="20%"></a><br>
+</div>
 </div>
 
 </body>
