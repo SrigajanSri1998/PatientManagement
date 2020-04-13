@@ -115,7 +115,7 @@ public class Patient {
 		}   
 		 catch (Exception e)   
 		 {    
-			 output = "Error while reading the items.";    
+			 output = "Error while reading the patient details.";    
 			 System.err.println(e.getMessage());   
 		 } 
 	 
@@ -125,7 +125,7 @@ public class Patient {
 	 
 	 
 	 
-	 public String updateItem(String ID, String code, String name, String price, String desc)  {
+	 public String updateItem(String ID, String name, String age, String gender, String address, String phoneno)  {
 		 String output = ""; 
 	 
 		  try   {    
@@ -136,15 +136,16 @@ public class Patient {
 		   } 
 		 
 		   // create a prepared statement    
-		   String query = "UPDATE items SET itemCode=?,itemName=?,itemPrice=?,itemDesc=?      WHERE itemID=?"; 
+		   String query = "UPDATE patient SET patientName=?,phoneNo=?,age=?,gender=?,  WHERE patientId=?"; 
 		 
 		   PreparedStatement preparedStmt = con.prepareStatement(query); 
 		 
 		   // binding values    
-		   preparedStmt.setString(1, code);    
-		   preparedStmt.setString(2, name);    
-		   preparedStmt.setDouble(3, Double.parseDouble(price));   
-		   preparedStmt.setString(4, desc);    
+		   preparedStmt.setString(1, name);    
+		   preparedStmt.setInt(2, Integer.parseInt(age));    
+		   preparedStmt.setString(3, gender);   
+		   preparedStmt.setString(4, address);   
+		   preparedStmt.setString(4, phoneno);
 		   preparedStmt.setInt(5, Integer.parseInt(ID)); 
 		 
 		   // execute the statement    
@@ -154,14 +155,14 @@ public class Patient {
 		   output = "Updated successfully";   
 		   }   
 		  catch (Exception e)   {
-			  output = "Error while updating the item.";    
+			  output = "Error while updating the patient details.";    
 			  System.err.println(e.getMessage());  
 		  } 
 		 
 		  return output;  
 		  } 
 		 
-		 public String deleteItem(String itemID)  {   
+		 public String deleteItem(String ID)  {   
 			 String output = ""; 
 	 
 			 try   {    
@@ -172,12 +173,12 @@ public class Patient {
 				} 
 	 
 			   // create a prepared statement    
-				 String query = "delete from items where itemID=?"; 
+				 String query = "delete from patient where patientId=?"; 
 			 
 			   PreparedStatement preparedStmt = con.prepareStatement(query); 
 			 
 			   // binding values    
-			   preparedStmt.setInt(1, Integer.parseInt(itemID)); 
+			   preparedStmt.setInt(1, Integer.parseInt(ID)); 
 			 
 			   // execute the statement    
 			   preparedStmt.execute();    
