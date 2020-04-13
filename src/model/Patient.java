@@ -61,7 +61,7 @@ public class Patient {
 			  return output; 
 	 }
 	 
-	 public String readItems()  
+	 public String readPatient()  
 	 {   
 		 String output = ""; 
 	 
@@ -125,7 +125,7 @@ public class Patient {
 	 
 	 
 	 
-	 public String updateItem(String ID, String name, String age, String gender, String address, String phoneno)  {
+	 public String updatePatient(String ID, String name, String age, String gender, String address, String phoneno)  {
 		 String output = ""; 
 	 
 		  try   {    
@@ -162,7 +162,7 @@ public class Patient {
 		  return output;  
 		  } 
 		 
-		 public String deleteItem(String ID)  {   
+		 public String deletePatient(String ID)  {   
 			 String output = ""; 
 	 
 			 try   {    
