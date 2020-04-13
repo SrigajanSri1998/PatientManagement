@@ -22,7 +22,7 @@ public class Patient {
 		
 	} 
 	 
-	 public String insertItem(String code, String name, String price, String desc)  
+	 public String insertPatient(String name, String age, String gender, String address, String phoneno)  
 	 {   
 		 String output = ""; 
 	 
@@ -35,16 +35,16 @@ public class Patient {
 			 {return "Error while connecting to the database for inserting."; } 
 	 
 			 // create a prepared statement    
-			 String query = " insert into items           (`itemID`,`itemCode`,`itemName`,`itemPrice`,`itemDesc`)"      + " values (?, ?, ?, ?, ?)"; 
+			 String query = " insert into patient           (`patientName`,`phoneNo`,`age`,`gender`,`patientAddress`)"      + " values (?, ?, ?, ?, ?)"; 
 	 
 			 PreparedStatement preparedStmt = con.prepareStatement(query); 
 	 
 			 // binding values    
-			 preparedStmt.setInt(1, 0);    
-			 preparedStmt.setString(2, code);    
-			 preparedStmt.setString(3, name);    
-			 preparedStmt.setDouble(4, Double.parseDouble(price));    
-			 preparedStmt.setString(5, desc); 
+			 preparedStmt.setString(1, name);    
+			 preparedStmt.setString(2, phoneno);    
+			 preparedStmt.setString(3, age);    
+			 preparedStmt.setString(4, gender);    
+			 preparedStmt.setString(5, address); 
 			
 			 // execute the statement    
 			 preparedStmt.execute();    
@@ -74,34 +74,37 @@ public class Patient {
 			 }
 	 
 			 // Prepare the html table to be displayed    
-			 output = "<table border=\"1\"><tr><th>Item Code</th><th>Item Name</th><th>Item     "
-			 		+ "		Price</th><th>Item           Description</th><th>Update</th><th>Remove</th></tr>"; 
+			 output = "<table border=\"1\"><tr><th>PatientId</th><th>Patient Name</th><th>PhoneNo     "
+			 		+ "		</th><th>Age</th><th>Gender</th><th>Address</th></tr>"; 
 	 
-			 String query = "select * from items";    
+			 String query = "select * from patient";    
 			 Statement stmt = con.createStatement();    
 			 ResultSet rs = stmt.executeQuery(query); 
 	 
 			 // iterate through the rows in the result set    
 			 while (rs.next())    
 			 {     
-				 String itemID = Integer.toString(rs.getInt("itemID"));     
-				 String itemCode = rs.getString("itemCode");     
-				 String itemName = rs.getString("itemName");     
-				 String itemPrice = Double.toString(rs.getDouble("itemPrice"));     
-				 String itemDesc = rs.getString("itemDesc"); 
+				 String patientId = Integer.toString(rs.getInt("patientId"));     
+				 String patientName = rs.getString("patientName");     
+				 String phoneno = rs.getString("phoneNo");     
+				 String age = Integer.toString(rs.getInt("age"));     
+				 String gender = rs.getString("gender"); 
+				 String address = rs.getString("address");
 			 
 	 
 				 // Add into the html table     
-				 output += "<tr><td>" + itemCode + "</td>";     
-				 output += "<td>" + itemName + "</td>";     
-				 output += "<td>" + itemPrice + "</td>";     
-				 output += "<td>" + itemDesc + "</td>"; 
+				 output += "<tr><td>" + patientId + "</td>";     
+				 output += "<td>" + patientName + "</td>";     
+				 output += "<td>" + phoneno + "</td>";     
+				 output += "<td>" + age + "</td>"; 
+				 output += "<td>" + gender + "</td>"; 
+				 output += "<td>" + address + "</td>"; 
 	 
 				 // buttons     
 				 output += "<td><input name=\"btnUpdate\" type=\"button\"        value=\"Update\" class=\"btn btn-secondary\"></td>"      
-						 + "<td><form method=\"post\" action=\"items.jsp\">"      
+						 + "<td><form method=\"post\" action=\"patients.jsp\">"      
 						 + "<input name=\"btnRemove\" type=\"submit\" value=\"Remove\"      class=\"btn btn-danger\">"      
-						 + "<input name=\"itemID\" type=\"hidden\" value=\"" + itemID      
+						 + "<input name=\"itemID\" type=\"hidden\" value=\"" + patientId      
 						 + "\">" + "</form></td></tr>";    
 			 } 
 	 
