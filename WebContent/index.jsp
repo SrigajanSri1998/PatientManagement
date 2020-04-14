@@ -12,8 +12,9 @@
 </head>
 <body>
 <div class="container p-5">
+<div class="h1 text-center">Hospital Management System</div>
 <div>
-<a href="/PatientManagement/patient"><img src="img/patient.png" class="rounded float-left m-5" alt="Patient" width="20%"></a>
+<a href="/PatientManagement/PatientService/Patient"><img src="img/patient.png" class="rounded float-left m-5" alt="Patient" width="20%"></a>
 <a href=""><img src="img/user.png" class="rounded float-left m-5" alt="User" width="20%"></a>
 <a href=""><img src="img/doctor.png" class="rounded float-left m-5" alt="Doctor" width="18%"></a><br>
 <a href=""><img src="img/ambulance.png" class="rounded float-left m-5" alt="ambulance" width="20%"></a>
