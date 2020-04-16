@@ -36,7 +36,7 @@ public class Patient {
 	 
 			 // create a prepared statement    
 			 String query = " insert into patient           (`patientName`,`phoneNo`,`age`,`gender`,`patientAddress`)"      + " values (?, ?, ?, ?, ?)"; 
-	 
+			 
 			 PreparedStatement preparedStmt = con.prepareStatement(query); 
 	 
 			 // binding values    
@@ -54,6 +54,7 @@ public class Patient {
 		}   
 		 catch (Exception e)   
 		 {    
+			 
 			 output = "Error while inserting the item.";    
 			 System.err.println(e.getMessage());   
 		 }

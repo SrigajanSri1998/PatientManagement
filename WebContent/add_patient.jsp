@@ -28,7 +28,7 @@
 	<h3 class="mb-5">Add Patient</h3>
 	
 	
-	<form method="post" action="patients.jsp">
+	<form method="post" action="http://localhost:8080/PatientManagement/PatientService/Patient">
 	<div class="form-group">
 	<label for="patientName">Patient Name:</label> 
 	<input class="form-control" name="patientName" type="text"><br>
