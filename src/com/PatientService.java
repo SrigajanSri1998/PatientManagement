@@ -30,7 +30,7 @@ public class PatientService {
 	 @Path("/")
 	 @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	 @Produces(MediaType.TEXT_PLAIN)
-	 public String insertPatient(@FormParam("name") String name,  @FormParam("age") String age, @FormParam("gender") String gender, @FormParam("address") String address, @FormParam("phoneno") String phoneno) { 
+	 public String insertPatient(@FormParam("patientName") String name,  @FormParam("age") String age, @FormParam("gender") String gender, @FormParam("address") String address, @FormParam("phoneno") String phoneno) { 
 		 String output = patientObj.insertPatient(name, age, gender, address, phoneno); 
 		 return output; 
 	 }
