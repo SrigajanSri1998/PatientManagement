@@ -15,42 +15,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/bootstrap.min.css"> 
+
+<script src="js/jquery.min.js" type="text/javascript"></script>
 <title>Insert title here</title>
 </head>
 <body>
+<div class="container">
 
-<h1>Patient management</h1>
-<form method="post" action="patients.jsp">
-Patient Name: <input name="patientName" type="text"><br>
-Patient Age: <input name="age" type="number"><br>
-Patient Address: <input name="address" type="text"><br>
-Patient phoneNo: <input name="phoneno" type="text"><br>
-Patient gender: <input name="gender" type="text"><br>
-<input name="btnSubmit" type="submit" value="Save">
-</form>
-<br>
+	<h1 class="text-center">Patient management</h1>
+	<h3 class="mb-5">Add Patient</h3>
+	<form method="post" action="patients.jsp">
+	<div class="form-group">
+	<label for="patientName">Patient Name:</label> 
+	<input class="form-control" name="patientName" type="text"><br>
+	
 
-<table border="1">
-<tr>
-<td>Patient Name</td>
-<td>Patient Age</td>
-<td>Patient Address</td>
-<td>Patient phoneNo</td>
-<td>Patient gender</td>
-<td></td>
-<td></td>
-</tr>
-<tr> 
-<td><%out.print(session.getAttribute("patientName")); %></td> 
-<td><%out.print(session.getAttribute("age")); %></td> 
-<td><%out.print(session.getAttribute("address")); %></td> 
-<td><%out.print(session.getAttribute("phoneno")); %></td> 
-<td><%out.print(session.getAttribute("gender")); %></td> 
-<td><input name="btnUpdate" type="button" value="Update"></td> 
-<td><input name="btnRemove" type="button" value="Remove"></td> 
-</tr> 
-</table>
-
+	<lable for="age">Patient Age: </lable>
+	<input class="form-control" name="age" type="number"><br>
+	
+	<lable for="phoneno">Patient phoneNo: </lable>
+	<input class="form-control" name="phoneno" type="text"><br>
+	
+	<lable for="address">Patient Address: </lable>
+	<input class="form-control" name="address" type="text"><br>
+	
+	<lable for="gender">Patient gender: </lable>
+	<input name="gender" class="form-control" type="text"><br>
+	</div>
+	
+	<input name="btnSubmit" class="btn btn-primary" type="submit" value="Save">
+	</form>
+	<br>
+</div>
 </body>
 </html>
