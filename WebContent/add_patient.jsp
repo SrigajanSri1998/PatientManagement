@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="css/bootstrap.min.css"> 
 
 <script src="js/jquery.min.js" type="text/javascript"></script>
-<title>Insert title here</title>
+<title>Add Patient</title>
 </head>
 <body>
 <div class="container">

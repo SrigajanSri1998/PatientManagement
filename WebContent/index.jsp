@@ -8,7 +8,7 @@
 <script src="js/jquery.min.js" type="text/javascript"></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Insert title here</title>
+<title>Hospital Management System</title>
 </head>
 <body>
 <div class="container p-5">
