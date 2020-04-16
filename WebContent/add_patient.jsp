@@ -1,7 +1,7 @@
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<% if (request.getParameter("patientName") != null)  
+<% if (request.getParameter("patientName") != null && request.getParameter("age") != null && request.getParameter("address") != null && request.getParameter("phoneno")!= null &&  request.getParameter("gender")!= null)  
 {  
 	session.setAttribute("patientName", request.getParameter("patientName"));  
 	session.setAttribute("age", request.getParameter("age"));  
@@ -26,6 +26,8 @@
 
 	<h1 class="text-center">Patient management</h1>
 	<h3 class="mb-5">Add Patient</h3>
+	
+	
 	<form method="post" action="patients.jsp">
 	<div class="form-group">
 	<label for="patientName">Patient Name:</label> 
