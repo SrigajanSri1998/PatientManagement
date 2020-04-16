@@ -34,16 +34,16 @@
 	<input class="form-control" name="patientName" type="text"><br>
 	
 
-	<lable for="age">Patient Age: </lable>
+	<label for="age">Patient Age: </label>
 	<input class="form-control" name="age" type="number"><br>
 	
-	<lable for="phoneno">Patient phoneNo: </lable>
+	<label for="phoneno">Patient phoneNo: </label>
 	<input class="form-control" name="phoneno" type="text"><br>
 	
-	<lable for="address">Patient Address: </lable>
+	<label for="address">Patient Address: </label>
 	<input class="form-control" name="address" type="text"><br>
 	
-	<lable for="gender">Patient gender: </lable>
+	<label for="gender">Patient gender: </label>
 	<input name="gender" class="form-control" type="text"><br>
 	</div>
 	
