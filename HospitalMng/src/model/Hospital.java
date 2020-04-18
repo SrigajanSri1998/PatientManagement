@@ -20,6 +20,7 @@ public class Hospital {
 	  return con;  
 	  } 
 	
+	//insert
 	public String insertHosDetails(String hosname, String address, String contactno, String email) 
 	{   
 		String output = ""; 
@@ -57,7 +58,8 @@ public class Hospital {
 	 return output;  
 	}
 	
-	
+
+	//read
 public String readHosDetails()  
 	{   
 		String output = ""; 
@@ -113,6 +115,8 @@ public String readHosDetails()
 	  return output;  
 	  } 
 	
+
+//update
 	public String updateHosDetails( String ID, String hosname, String address, String contactno, String email)  
 	{   
 		String output = ""; 
@@ -152,6 +156,8 @@ public String readHosDetails()
 	  
 	}
 	
+	
+	//delete
 	public String deleteHosDetails(String hosID)  
 	{   
 		String output = ""; 
