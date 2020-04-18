@@ -16,6 +16,8 @@
 	<div class="container">
 		<a href="http://localhost:8080/PatientManagement/add_patient.jsp" class="btn btn-success mt-5 float-right">Add Patient</a>
 	</div>
+	
+	<div class="h4 text-center">All Patients</div>
 
 </body>
 </html>
