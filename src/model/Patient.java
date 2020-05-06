@@ -50,12 +50,14 @@ public class Patient {
 			 preparedStmt.execute();    
 			 con.close(); 
 			 
-			 output = "Inserted successfully";   
+			 String newPatient = readPatient();
+				output = "{\"status\":\"success\", \"data\": \"" +newPatient + "\"}";
+				 
 		}   
 		 catch (Exception e)   
 		 {    
 			 
-			 output = "Error while inserting the item.";    
+			 output = "{\"status\":\"error\", \"data\":\"Error while inserting the patient details.\"}";   
 			 System.err.println(e.getMessage());   
 		 }
 			 
@@ -153,10 +155,11 @@ public class Patient {
 		   preparedStmt.execute();    
 		   con.close(); 
 		 
-		   output = "Updated successfully";   
+		   String newPatient = readPatient();
+			output = "{\"status\":\"success\", \"data\": \"" +newPatient + "\"}"; 
 		   }   
 		  catch (Exception e)   {
-			  output = "Error while updating the patient details.";    
+			  output = "{\"status\":\"error\", \"data\":\"Error while updating the patient.\"}";    
 			  System.err.println(e.getMessage());  
 		  } 
 		 
@@ -185,10 +188,11 @@ public class Patient {
 			   preparedStmt.execute();    
 			   con.close(); 
 			 
-			   output = "Deleted successfully";   
+			   String newPatient = readPatient();
+				output = "{\"status\":\"success\", \"data\": \"" +newPatient + "\"}";  
 			   }   
 			 	catch (Exception e)   {    
-			 		output = "Error while deleting the item.";    
+			 		output = "{\"status\":\"error\", \"data\":\"Error while deleting the patient.\"}";  
 			 		System.err.println(e.getMessage());   
 			 	} 
 			 
