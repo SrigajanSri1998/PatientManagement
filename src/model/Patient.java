@@ -41,7 +41,7 @@ public class Patient {
 	 
 			 // binding values    
 			 preparedStmt.setString(1, name);    
-			 preparedStmt.setString(2, phoneno);    
+			 preparedStmt.setString(2, phoneno);  
 			 preparedStmt.setString(3, age);    
 			 preparedStmt.setString(4, gender);    
 			 preparedStmt.setString(5, address); 
