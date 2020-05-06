@@ -2,27 +2,16 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@page import="model.Patient"%>
-<% if (request.getParameter("patientName") != null && request.getParameter("age") != null && request.getParameter("address") != null && request.getParameter("phoneno")!= null &&  request.getParameter("gender")!= null)  
-{  
-	session.setAttribute("patientName", request.getParameter("patientName"));  
-	session.setAttribute("age", request.getParameter("age"));  
-	session.setAttribute("address", request.getParameter("address"));  
-	session.setAttribute("phoneno", request.getParameter("phoneno"));  
-	session.setAttribute("gender", request.getParameter("gender")); 
-	
-	
-} 
-%> 
+
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
-<link rel="stylesheet" href="css/bootstrap.min.css"> 
-
-<script src="js/jquery.min.js" type="text/javascript"></script>
 <title>Patient</title>
-
+<link rel="stylesheet" href="Views/bootstrap.min.css">
+<script src="Components/jquery-3.2.1.min.js"></script>
+<script src="Components/hospital.js"></script>
 </head>
 <body>
 	<div class="container">

@@ -15,7 +15,7 @@ $(document).on("click", "#btnSave", function(event) {
 	$("#alertError").hide();
 
 	// Form validation-------------------
-	var status = validateItemForm();
+	var status = validatePatientForm();
 	if (status != true) {
 
 		$("#alertError").text(status);
@@ -24,12 +24,12 @@ $(document).on("click", "#btnSave", function(event) {
 		return;
 	}
 
-	var type = ($("#hidItemIDSave").val() == "") ? "POST" : "PUT";
+	var type = ($("#hidPatientIDSave").val() == "") ? "POST" : "PUT";
 
 	$.ajax({
-		url : "PatientService",
+		url : "patientAPI",
 		type : type,
-		data : $("#formItem").serialize(),
+		data : $("#formHospital").serialize(),
 		dataType : "text",
 		complete : function(response, status) {
 			onItemSaveComplete(response.responseText, status);
@@ -40,13 +40,13 @@ $(document).on("click", "#btnSave", function(event) {
 
 });
 
-function onItemSaveComplete(response, status) {
+function onHospitalSaveComplete(response, status) {
 	if (status == "success") {
 		var resultSet = JSON.parse(response);
 		if (resultSet.status.trim() == "success") {
 			$("#alertSuccess").text("Successfully saved.");
 			$("#alertSuccess").show();
-			$("#divItemsGrid").html(resultSet.data);
+			$("#divPatientsGrid").html(resultSet.data);
 		} else if (resultSet.status.trim() == "error") {
 			$("#alertError").text(resultSet.data);
 			$("#alertError").show();
@@ -58,8 +58,8 @@ function onItemSaveComplete(response, status) {
 		$("#alertError").text("Unknown error while saving..");
 		$("#alertError").show();
 	}
-	$("#hidItemIDSave").val("");
-	$("#formItem")[0].reset();
+	$("#hidPatientIDSave").val("");
+	$("#formPatient")[0].reset();
 }
 $(document).on("click", ".btnRemove", function(event) {
 	$.ajax({
@@ -68,18 +68,18 @@ $(document).on("click", ".btnRemove", function(event) {
 		data : "PID=" + $(this).data("pid"),
 		dataType : "text",
 		complete : function(response, status) {
-			onItemDeleteComplete(response.responseText, status);
+			onPatientDeleteComplete(response.responseText, status);
 		}
 	});
 });
 
-function onItemDeleteComplete(response, status) {
+function onPatientDeleteComplete(response, status) {
 	if (status == "success") {
 		var resultSet = JSON.parse(response);
 		if (resultSet.status.trim() == "success") {
 			$("#alertSuccess").text("Successfully deleted.");
 			$("#alertSuccess").show();
-			$("#divItemsGrid").html(resultSet.data);
+			$("#divHospitalsGrid").html(resultSet.data);
 		} else if (resultSet.status.trim() == "error") {
 			$("#alertError").text(resultSet.data);
 			$("#alertError").show();
@@ -95,9 +95,11 @@ function onItemDeleteComplete(response, status) {
 
 $(document)
 		.on("click",".btnUpdate",function(event) {
-					$("#hidItemIDSave").val(
-							$(this).closest("tr").find('#hidItemIDUpdate')
+					$("#hidPatientIDSave").val(
+							$(this).closest("tr").find('#hidPatientIDUpdate')
 									.val());
+					$("#patientID").val(
+							$(this).closest("tr").find('td:eq(0)').text());
 					$("#name").val(
 							$(this).closest("tr").find('td:eq(0)').text());
 					$("#age").val(
@@ -114,6 +116,11 @@ $(document)
 
 // CLIENT-MODEL================================================================
 function validateItemForm() {
+	// hos code
+	if ($("#patientID").val().trim() == "") {
+
+		return "Insert Patient Code.";
+	}
 	// holderName
 	if ($("#name").val().trim() == "") {
 
@@ -153,8 +160,6 @@ function validateItemForm() {
 	}
 
 
-	
-	
 	return true;
 	
 	

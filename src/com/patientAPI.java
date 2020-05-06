@@ -56,7 +56,7 @@ public class patientAPI extends HttpServlet {
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		Map paras = getParasMap(request);
-		String output = Patient.updatePatient(paras.get("patientIDPatientIDSave").toString(),
+		String output = Patient.updatePatient(paras.get("hidPatientIDSave").toString(),
 		paras.get("patientId").toString(),
 		paras.get("name").toString(),
 		paras.get("phoneNo").toString(),
@@ -73,7 +73,7 @@ public class patientAPI extends HttpServlet {
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		Map paras = getParasMap(request);
-		String output = Patient.deletePatient(paras.get("patientID").toString());
+		String output = Patient.deletePatient(paras.get("hidPatientIDSave").toString());
 		response.getWriter().write(output);
 	}
 	
